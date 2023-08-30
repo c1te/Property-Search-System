@@ -9,9 +9,9 @@ public class Entry {
 			private PrintProperty pr = new PrintProperty();
 			
 			//insert property
-			
-		    public void insertProperty() {
 			Scanner sc = new Scanner(System.in);
+		    public void insertProperty() {
+			
 			
 			System.out.print("Id:");
 			int id = sc.nextInt();
@@ -31,7 +31,6 @@ public class Entry {
 			String ownerName = sc.next();
 			System.out.print("Enter Contact Number : ");
 			String contactNo = sc.next();
-			sc.close();	
 			Property newProp = new Property(id , noOfRooms , floor , city , state , cost , ownerName , contactNo , area );
 			acs.addProperty(newProp);
 		    }
@@ -39,24 +38,22 @@ public class Entry {
 		    //delete property
 		    
 		    public void deleteProperty() {
-		    	Scanner sc = new Scanner(System.in);
+		    	
 		    	System.out.print("Enter Property id : ");
 		    	int id = sc.nextInt();
 		    	acs.deleteProperty(id);
-		    	sc.close();
 		    	
 		    }
 		    
 		    //update property cost
 		    
 		    public void updatePropertyCost() {
-		    	Scanner sc = new Scanner(System.in);
+		    	
 		    	System.out.print("Enter Property id To Update : ");
 		    	int id = sc.nextInt();
 		    	System.out.print("Enter Updated Price : ");
 		    	double cost = sc.nextDouble();
 		    	acs.updatePropertyCost(id,cost);
-		    	sc.close();
 		    	
 		    }
 		    
@@ -69,34 +66,34 @@ public class Entry {
 		  //search by city
 			
 			 public void searchByCity() {
-			    	Scanner sc = new Scanner(System.in);
+			    	
 			    	System.out.print("Enter City : ");
 			    	String city = sc.next();
 			    	pr.printProperty(acs.searchByCity(city));;
-			    	sc.close();
+			    	
 			    }
 			//search by cost
 			
 			public void searchByCost() {
-		    	Scanner sc = new Scanner(System.in);
+		    	
 		    	System.out.print("Enter low : ");
 		    	double low = sc.nextDouble();
 		    	System.out.print("Enter high : ");
 		    	double high = sc.nextDouble();
 		    	pr.printProperty(acs.searchByCost(low, high));;
-		    	sc.close();
+		    	
 		    }
 			
 			//search by room and city
 			
 			public void searchByRoomAndCity() {
-		    	Scanner sc = new Scanner(System.in);
+		    	
 		    	System.out.print("Enter No Of Rooms : ");
 		    	String noRoom = sc.next();
 		    	System.out.print("Enter City : ");
 		    	String city = sc.next();
 		    	pr.printProperty(acs.searchByRoomAndCity(noRoom , city));
-		    	sc.close();
+		    	
 		    }
 			
 			static void choice() {
